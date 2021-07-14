@@ -149,7 +149,8 @@ function TopSection() {
             <LeftContainer>
                 <Slogan>Rent The Best Quality Car With Us</Slogan>
                 <Description>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, consectetur enim accusantium nam praesentium tempora facere necessitatibus, corporis vero nostrum placeat maxime deserunt mollitia, a dolorem nulla quibusdam aliquam ducimus?
+                    Always choose the best car from our local stores or order it remotely at 
+                    the best price for you and get the best quality cars for as long as you like
                 </Description>
                 <ButtonsContainer>
                     <Button text='Book Your Ride'/>
