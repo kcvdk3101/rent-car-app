@@ -11,7 +11,7 @@
 
 ## 3.Dependencies
 - @reduxjs/toolkit
-- styled-components
+- styled-**components**
 - @types/styled-components
 - @types/react-responsive
 - craco

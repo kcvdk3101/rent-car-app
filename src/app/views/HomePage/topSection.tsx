@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
-
 import mclaren from '../../assets/images/mclaren-orange-big.png';
 import blob from '../../assets/images/blob.svg';
 import { SCREENS } from '../../../responsive';
+import Button from '../../components/button';
 
 const TopSectionContainer = styled.div`
     min-height: 400px;
@@ -135,6 +135,14 @@ const StandaloneCar = styled.div`
     }
 `;
 
+const ButtonsContainer = styled.div`
+    ${tw`
+        flex
+        flex-wrap
+        mt-4
+    `}
+`
+
 function TopSection() {
     return (
         <TopSectionContainer>
@@ -143,6 +151,10 @@ function TopSection() {
                 <Description>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, consectetur enim accusantium nam praesentium tempora facere necessitatibus, corporis vero nostrum placeat maxime deserunt mollitia, a dolorem nulla quibusdam aliquam ducimus?
                 </Description>
+                <ButtonsContainer>
+                    <Button text='Book Your Ride'/>
+                    <Button theme='filled' text='Sell Your Car'/>
+                </ButtonsContainer>
             </LeftContainer>
             <RightContainer>
                 <BlobContainer>

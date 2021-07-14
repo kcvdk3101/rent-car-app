@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import './App.css';
 import { HomePage } from "./app/views/HomePage/index";
 
 const AppContainer = styled.div`
