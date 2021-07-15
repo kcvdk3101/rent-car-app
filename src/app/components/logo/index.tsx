@@ -12,7 +12,6 @@ const LogoContainer = styled.div`
 
 const LogoText = styled.div`
     ${tw`
-        text-transform[uppercase]
         m-1
         text-xl
         md:text-2xl
@@ -40,7 +39,7 @@ function Logo() {
             <Image>
                 <img src={logo} alt='logo'/>
             </Image>
-            <LogoText>Satan.</LogoText>
+            <LogoText>Rental.</LogoText>
         </LogoContainer>
     )
 }
