@@ -30,7 +30,7 @@
    $ yarn add twin.macro
 ```
 ### 4.2 Configuration
-`Create a `craco.config.js` at the root of our project`
+Create a `craco.config.js` at the root of our project
 ```js
 // craco.config.js
 module.exports = {
@@ -45,7 +45,7 @@ module.exports = {
 }
 ```
 
-`Create a `tailwind.config.js` at the root of our project`
+Create a `tailwind.config.js` at the root of our project
 ```js
 // tailwind.config.js
 module.exports = {
