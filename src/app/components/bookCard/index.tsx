@@ -1,10 +1,12 @@
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faAngleUp, faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 import Button from '../button'
 import { Marginer } from '../marginer/index'
+import Calendar from 'react-calendar'
+import { SCREENS } from '../../../responsive'
 
 const CardContainer = styled.div`
     ${tw`
@@ -22,7 +24,11 @@ const CardContainer = styled.div`
 `
 
 const ItemContainer = styled.div`
-    ${tw`flex`}
+    ${tw`
+        relative
+        flex
+        cursor-pointer
+    `}
 `
 
 const Icon = styled.span`
@@ -36,11 +42,27 @@ const Icon = styled.span`
     `}
 `
 
+const SmallIcon = styled.span`
+    ${tw`
+        ml-2
+        text-xs
+        text-gray-300
+        md:text-base
+        fill-current
+        transition
+        duration-500
+        ease-in-out
+    `}
+`
+
 const Name = styled.span`
     ${tw`
+        flex
+        items-center
         text-xs
         md:text-sm
         text-gray-500
+        select-none
     `}
 `
 
@@ -54,23 +76,65 @@ const LineSeparator = styled.span`
     `}
 `
 
+const DateCalendar = styled(Calendar)`
+    ${tw`
+        absolute
+        max-w-none
+        user-select[none]
+        top-14
+        left-1.5
+    `}
+    /**
+    * TODO: Responsive in Mobile Device
+    */
+    @media (min-width: ${SCREENS.sm}) {
+
+    }
+
+`
+
 function BookCard() {
+    const [startDate, setStartDate] = useState<Date>(new Date())
+    const [openStartCalendar, setOpenStartCalendar] = useState(false)
+    const [returnDate, setReturnDate] = useState<Date>(new Date())
+    const [openReturnCalendar, setOpenReturnCalendar] = useState(false)
+
+
+    const handleOpenStartCalendar = () => {
+        setOpenStartCalendar(!openStartCalendar)
+        if (openReturnCalendar) setOpenReturnCalendar(false)
+    }
+
+    const handleOpenReturnCalendar = () => {
+        setOpenReturnCalendar(!openReturnCalendar)
+        if (openStartCalendar) setOpenStartCalendar(false)
+    }
+
+
     return (
         <CardContainer>
             <ItemContainer>
                 <Icon>
                     <FontAwesomeIcon icon={faCalendarAlt} />
                 </Icon>
-                <Name>Pick Up Date</Name>
+                <Name onClick={handleOpenStartCalendar}>Pick Up Date</Name>
+                <SmallIcon>
+                    <FontAwesomeIcon icon={openStartCalendar ? faAngleUp : faAngleDown} />
+                </SmallIcon>
+                {openStartCalendar && <DateCalendar value={startDate} onChange={setStartDate} minDate={new Date()}/> }
             </ItemContainer>
             <LineSeparator/>
             <ItemContainer>
                 <Icon>
                     <FontAwesomeIcon icon={faCalendarAlt} />
                 </Icon>
-                <Name>Return Date</Name>
+                <Name onClick={handleOpenReturnCalendar}>Return Date</Name>
+                <SmallIcon>
+                    <FontAwesomeIcon icon={openReturnCalendar ? faAngleUp : faAngleDown} />
+                </SmallIcon>
+                {openReturnCalendar && <DateCalendar value={returnDate} onChange={setReturnDate} minDate={new Date()}/>}
             </ItemContainer>
-            <Marginer margin="2em" direction="horizontal" />
+            <Marginer direction="horizontal" margin="16px" />
             <Button text="Book Your Ride"/>
         </CardContainer>
     )
