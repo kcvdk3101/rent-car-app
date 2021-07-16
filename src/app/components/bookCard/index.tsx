@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 import Button from '../button'
-import { Marginer } from '../marginer/index'
 import Calendar from 'react-calendar'
 import { SCREENS } from '../../../responsive'
 import convertScreenToWidth from '../../utils/convertScreenToWidth'
@@ -148,7 +147,6 @@ function BookCard() {
                 </SmallIcon>
                 {openReturnCalendar && <DateCalendar value={returnDate} onChange={setReturnDate} minDate={new Date()}/>}
             </ItemContainer>
-            <Marginer direction="horizontal" margin="16px" />
             <Button text={isSmallThanScreenMedium ? 'Booking' : 'Book Your Ride'}/>
         </CardContainer>
     )
