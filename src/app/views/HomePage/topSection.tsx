@@ -5,77 +5,70 @@ import mclaren from '../../assets/images/mclaren-orange-big.png';
 import blob from '../../assets/images/blob.svg';
 import { SCREENS } from '../../../responsive';
 import Button from '../../components/button';
+import convertScreenToWidth from '../../utils/convertScreenToWidth';
 
 const TopSectionContainer = styled.div`
-    min-height: 400px;
-    margin-top: 6em;
     ${tw`
         w-full
         max-w-screen-2xl
         flex
         justify-between
-        pl-3
-        pr-3
-        lg:pl-12
-        lg:pr-12
+        px-3
+        lg:px-12
     `}
 `
-const LeftContainer = styled.div`
+const LeftContainer = styled.div` 
     ${tw`
-        w-1/2
         flex
+        flex-1
         flex-col
     `}
 `
 const RightContainer = styled.div`
     ${tw`
         relative
-        w-1/2
         flex
+        flex-1
         flex-col
-        mt-20
     `}
 `
 const Slogan = styled.h1`
     ${tw`
-        mb-4
+        leading-snug
+        md:leading-8
+        lg:leading-10
+        xl:leading-relaxed
+        text-base
+        md:text-2xl
+        lg:text-4xl
+        xl:text-6xl
+        text-black
         font-bold
         md:font-extrabold
         lg:font-black
-        text-black
-        text-2xl
-        sm:text-3xl
-        md:text-5xl
-        xl:text-6xl
-        sm:leading-snug
-        lg:leading-normal
-        xl:leading-relaxed
     `}
 `
 const Description = styled.p`
     ${tw`
-        overflow-hidden
-        max-h-12
-        sm:max-h-full
-        text-gray-800
+        mt-2
+        text-align[justify]
         text-xs
         lg:text-sm
         xl:text-lg
+        text-gray-600
     `}
 `
 const BlobContainer = styled.div`
     z-index: -1;
     position: absolute;
-    top: -9em;
-    right: -5em;
+    top:-4em;
+    left:-1.5em;
     width: 20em;
-    height: 10em;
     transform: rotate(-30deg);
 
     img {
         width: 100%;
         height: auto;
-        max-height: max-content;
     }
 
     @media (min-width: ${SCREENS.sm}) {
@@ -105,8 +98,7 @@ const BlobContainer = styled.div`
 `
 const StandaloneCar = styled.div`
     position: absolute;
-    top: -5em;
-    right: -6em;
+    right: -6.5em;
     width: auto;
     height: 10em;
 
@@ -138,23 +130,27 @@ const StandaloneCar = styled.div`
 const ButtonsContainer = styled.div`
     ${tw`
         flex
-        flex-wrap
-        mt-4
+        mt-2
     `}
 `
 
 function TopSection() {
+    const isSmallThanScreenMedium = window.innerWidth <= convertScreenToWidth(SCREENS.md);
     return (
         <TopSectionContainer>
             <LeftContainer>
                 <Slogan>Rent The Best Quality Car With Us</Slogan>
                 <Description>
-                    Always choose the best car from our local stores or order it remotely at 
-                    the best price for you and get the best quality cars for as long as you like
+                    Always choose the best car from our global and local stores or order it remotely at 
+                    the best price for you and get the best quality cars for as long as you like.
                 </Description>
                 <ButtonsContainer>
-                    <Button text='Book Your Ride'/>
-                    <Button theme='filled' text='Sell Your Car'/>
+                    <Button
+                        text={isSmallThanScreenMedium ? 'Booking' : 'Book Your Ride'}
+                    />
+                    <Button theme='filled' 
+                        text={isSmallThanScreenMedium ? 'Sell Car' : 'Sell Your Car'}
+                    />
                 </ButtonsContainer>
             </LeftContainer>
             <RightContainer>

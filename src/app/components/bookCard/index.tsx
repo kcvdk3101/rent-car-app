@@ -7,16 +7,19 @@ import Button from '../button'
 import { Marginer } from '../marginer/index'
 import Calendar from 'react-calendar'
 import { SCREENS } from '../../../responsive'
+import convertScreenToWidth from '../../utils/convertScreenToWidth'
 
 const CardContainer = styled.div`
     ${tw`
         flex
         justify-center
         items-center
+        w-11/12
+        md:w-0
         rounded-md
         bg-white
         shadow
-        py-1
+        py-4
         px-2
         md:py-2
         md:px-6
@@ -25,26 +28,48 @@ const CardContainer = styled.div`
 
 const ItemContainer = styled.div`
     ${tw`
+        cursor-pointer
         relative
         flex
-        cursor-pointer
     `}
 `
 
 const Icon = styled.span`
     ${tw`
+        flex
+        justify-center
+        items-center
         text-xs
         md:text-base
         mr-1
         md:mr-3
         text-red-500
-        fill-current
+    `}
+
+    @media (max-width: ${SCREENS.sm}) {
+        display: none;
+    }
+`
+const Name = styled.span`
+    ${tw`
+        flex
+        justify-center
+        items-center
+        mx-2
+        text-xs
+        text-align[center]
+        md:text-sm
+        md:text-align[start]
+        text-gray-500
+        select-none
     `}
 `
 
 const SmallIcon = styled.span`
     ${tw`
-        ml-2
+        flex
+        justify-center
+        items-center
         text-xs
         text-gray-300
         md:text-base
@@ -52,17 +77,6 @@ const SmallIcon = styled.span`
         transition
         duration-500
         ease-in-out
-    `}
-`
-
-const Name = styled.span`
-    ${tw`
-        flex
-        items-center
-        text-xs
-        md:text-sm
-        text-gray-500
-        select-none
     `}
 `
 
@@ -98,6 +112,7 @@ function BookCard() {
     const [openStartCalendar, setOpenStartCalendar] = useState(false)
     const [returnDate, setReturnDate] = useState<Date>(new Date())
     const [openReturnCalendar, setOpenReturnCalendar] = useState(false)
+    const isSmallThanScreenMedium = window.innerWidth <= convertScreenToWidth(SCREENS.md);
 
 
     const handleOpenStartCalendar = () => {
@@ -109,7 +124,6 @@ function BookCard() {
         setOpenReturnCalendar(!openReturnCalendar)
         if (openStartCalendar) setOpenStartCalendar(false)
     }
-
 
     return (
         <CardContainer>
@@ -135,7 +149,7 @@ function BookCard() {
                 {openReturnCalendar && <DateCalendar value={returnDate} onChange={setReturnDate} minDate={new Date()}/>}
             </ItemContainer>
             <Marginer direction="horizontal" margin="16px" />
-            <Button text="Book Your Ride"/>
+            <Button text={isSmallThanScreenMedium ? 'Booking' : 'Book Your Ride'}/>
         </CardContainer>
     )
 }

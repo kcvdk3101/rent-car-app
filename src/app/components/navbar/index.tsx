@@ -18,7 +18,12 @@ const NavbarContainer = styled.div`
     `}
 `
 
-const LogoContainer = styled.div``;
+const LogoContainer = styled.div`
+    ${tw`
+        ml-3
+        md:ml-0
+    `}
+`;
 
 function Navbar() {
     return (

@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
+export const styles = {
   bmBurgerButton: {
     position: "absolute",
     width: "20px",
@@ -22,24 +21,23 @@ export default {
   },
   bmMenuWrap: {
     position: "fixed",
-    width: "60%",
+    width: "50%",
     height: "100%",
     top: "0px",
   },
   bmMenu: {
     background: "#373a47",
-    padding: "2.5em 1.5em 0",
-    fontSize: "1.15em",
+    padding: "2em 1em 0",
   },
   bmMorphShape: {
     fill: "#373a47",
   },
   bmItemList: {
     color: "#b8b7ad",
-    padding: "0.8em",
+    fontSize: "3em",
   },
   bmItem: {
-    display: "inline-block",
+    display: "block",
   },
   bmOverlay: {
     background: "rgba(0, 0, 0, 0.3)",

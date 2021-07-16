@@ -16,11 +16,8 @@ const BaseButton = styled.div`
         rounded-md
         focus:outline-none
 
-        m-1
-        pt-3
-        pb-3
-        pl-5
-        pr-5
+        p-2
+        mr-2
 
         font-semibold
         text-xs
