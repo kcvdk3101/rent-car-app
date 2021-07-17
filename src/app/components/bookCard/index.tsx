@@ -25,7 +25,7 @@ const CardContainer = styled.div`
         md:px-6
         lg:py-4
         lg:px-8 
-        md:my-10
+        md:my-16
     `}
 
     @media (min-width: ${SCREENS.lg}) {

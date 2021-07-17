@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
+import { SCREENS } from '../../../responsive'
 
 const steps = [
     {
@@ -28,20 +29,44 @@ const Container = styled.div`
         flex-col
         items-center
         w-full
-        py-3
+        pt-14
+        pb-20
         lg:py-6
     `}
-`
 
+    @media (min-width: ${SCREENS.sm}) {
+        ${tw`
+            mb-1
+        `}
+    }
+
+    @media (min-width: ${SCREENS.md}) {
+        ${tw`
+            mb-4
+        `}
+    }
+
+    @media (min-width: ${SCREENS.lg}) {
+        ${tw`
+            mb-16
+        `}
+    }
+
+    @media (min-width: ${SCREENS.xl}) {
+        ${tw`
+            mb-32
+        `}
+    }
+`
 const Title = styled.h2`
     ${tw`
         text-2xl
+        md:text-3xl
         lg:text-4xl
         font-extrabold
         text-black
     `}
 `
-
 const StepsContainer = styled.div`
     ${tw`
         flex
@@ -51,10 +76,21 @@ const StepsContainer = styled.div`
         md:mt-7
         lg:mt-16
     `}
-`
 
+    @media (min-width: ${SCREENS.md}) {
+        ${tw`
+            flex-row
+            w-full
+        `}
+    }
+
+    @media (min-width: ${SCREENS.lg}) {
+        ${tw`
+            mt-7
+        `}
+    }
+`
 const StepContainer = styled.div`
-    
     ${tw`
         flex
         flex-col
@@ -63,15 +99,18 @@ const StepContainer = styled.div`
         m-3
         hover:text-red-500
     `}
-`
 
+    
+`
 const Step = styled.div`
-    width: 100px;
     ${tw`
         flex
         justify-center
         items-center
         rounded-lg
+        p-5
+        md:p-7
+        lg:p-8
         shadow-md
     `}
 `
@@ -83,7 +122,6 @@ const StepTitle = styled.h4`
         text-black
     `}
 `
-
 const StepDescription = styled.p`
     ${tw`
         w-10/12
@@ -93,7 +131,6 @@ const StepDescription = styled.p`
         text-gray-600
     `}
 `
-
 const StepIcon = styled.span`
     ${tw` 
         text-3xl

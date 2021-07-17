@@ -9,30 +9,34 @@ const AboutUsContainer = styled.div`
     ${tw`   
         flex
         flex-col
-        md:flex-row
+        xl:flex-row
         items-center
         2xl:justify-center
         w-full
-        py-4
+        mb-20
         px-10
-        md:px-10
         bg-white
     `}
 `
-
 const CarContainer = styled.div`
     ${tw`
         flex-1
+        items-center
+        justify-center
         w-auto
-        height[15em]
     `}
 
+    img { 
+        width: 100%;
+    }
+
     @media (min-width: ${SCREENS.md}) {
-        width:100%;
+        width:90%;
         height: 28em;
     }
 
     @media (min-width: ${SCREENS.lg}) {
+        width: 80%;
         height: 30em;
     }
 
@@ -41,7 +45,6 @@ const CarContainer = styled.div`
         margin-left: 0;
     }
 `
-
 const InfoContainer = styled.div`
     ${tw`
         flex
@@ -51,10 +54,9 @@ const InfoContainer = styled.div`
         2xl:ml-16
     `}
 `
-
 const Title = styled.h1`
     ${tw`
-        text-xl
+        text-2xl
         md:text-5xl
         text-black
         font-extrabold
@@ -62,7 +64,6 @@ const Title = styled.h1`
         md:leading-normal
     `}
 `
-
 const InfoText = styled.p`
     ${tw`
         w-full
@@ -70,7 +71,8 @@ const InfoText = styled.p`
         mt-4
         text-justify
         text-sm
-        md:text-base
+        md:text-xl
+        lg:text-2xl
         text-gray-500
         font-normal
     `}

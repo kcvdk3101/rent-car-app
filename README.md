@@ -4,10 +4,10 @@
     </a>
 </p>
 
-# Rental Car App (Clone App)
+# Rental Car App
 
 ## Description
-> ### This is clone app for me to code full MERN Website using React TypeScript, Tailwind, GraphQL and Docker.
+> ### This is app for me to code full MERN Website using React TypeScript, Tailwind, GraphQL and Docker.
 
 ## 1. Environment
 - NodeJS
