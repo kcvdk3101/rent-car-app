@@ -14,17 +14,30 @@ const CardContainer = styled.div`
         justify-center
         items-center
         w-11/12
-        md:w-0
+        md:w-auto
         rounded-md
         bg-white
         shadow
+        my-10
         py-4
         px-2
         md:py-2
         md:px-6
+        lg:py-4
+        lg:px-8 
+        md:my-10
     `}
-`
 
+    @media (min-width: ${SCREENS.lg}) {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    @media (min-width: ${SCREENS.xl}) {
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+`
 const ItemContainer = styled.div`
     ${tw`
         cursor-pointer
@@ -32,7 +45,6 @@ const ItemContainer = styled.div`
         flex
     `}
 `
-
 const Icon = styled.span`
     ${tw`
         flex
@@ -63,7 +75,6 @@ const Name = styled.span`
         select-none
     `}
 `
-
 const SmallIcon = styled.span`
     ${tw`
         flex
@@ -78,7 +89,6 @@ const SmallIcon = styled.span`
         ease-in-out
     `}
 `
-
 const LineSeparator = styled.span`
     width: 2px;
     height: 45%;
@@ -88,7 +98,6 @@ const LineSeparator = styled.span`
         md:mx-5
     `}
 `
-
 const DateCalendar = styled(Calendar)`
     ${tw`
         absolute
@@ -111,7 +120,7 @@ function BookCard() {
     const [openStartCalendar, setOpenStartCalendar] = useState(false)
     const [returnDate, setReturnDate] = useState<Date>(new Date())
     const [openReturnCalendar, setOpenReturnCalendar] = useState(false)
-    const isSmallThanScreenMedium = window.innerWidth <= convertScreenToWidth(SCREENS.md);
+    const isSmallThanScreenMedium = window.innerWidth < convertScreenToWidth(SCREENS.md);
 
 
     const handleOpenStartCalendar = () => {
@@ -147,6 +156,7 @@ function BookCard() {
                 </SmallIcon>
                 {openReturnCalendar && <DateCalendar value={returnDate} onChange={setReturnDate} minDate={new Date()}/>}
             </ItemContainer>
+            <LineSeparator/>
             <Button text={isSmallThanScreenMedium ? 'Booking' : 'Book Your Ride'}/>
         </CardContainer>
     )

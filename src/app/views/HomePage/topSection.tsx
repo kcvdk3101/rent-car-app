@@ -13,6 +13,9 @@ const TopSectionContainer = styled.div`
         max-w-screen-2xl
         flex
         justify-between
+        mt-8
+        md:mt-20
+        lg:mt-28
         px-3
         lg:px-12
     `}
@@ -36,24 +39,25 @@ const Slogan = styled.h1`
     ${tw`
         leading-snug
         md:leading-8
-        lg:leading-10
-        xl:leading-relaxed
-        text-base
-        md:text-2xl
+        lg:leading-relaxed
+        text-xl
+        font-semibold
+        md:text-3xl
         lg:text-4xl
         xl:text-6xl
         text-black
-        font-bold
-        md:font-extrabold
-        lg:font-black
     `}
+
+    @media (min-width: ${SCREENS.xl}) {
+        line-height: 80px;
+    }
 `
 const Description = styled.p`
     ${tw`
-        mt-2
+        my-2
         text-align[justify]
         text-xs
-        lg:text-sm
+        md:text-base
         xl:text-lg
         text-gray-600
     `}
@@ -72,27 +76,27 @@ const BlobContainer = styled.div`
     }
 
     @media (min-width: ${SCREENS.sm}) {
-        top: -16em;
-        right: -9em;
+        top: -12em;
+        left: -10em;
         width: 40em;
         max-height: 10em;
-        transform: rotate(-25deg)
+        transform: rotate(-35deg);
     }
 
     @media (min-width: ${SCREENS.lg}) {
-        top: -15em;
-        right: -7em;
-        width: 50em;
-        max-height: 30em;
+        top: -17em;
+        left: -8em;
+        width: 52em;
+        max-height: 25em;
         transform: rotate(-30deg)
     }
 
     @media (min-width: ${SCREENS.xl}) {
-        top: -25em;
-        right: -15em;
+        top: -18em;
+        left: -10em;
         width: 70em;
         max-height: 30em;
-        transform: rotate(-20deg)
+        transform: rotate(-40deg)
     }
 
 `
@@ -109,9 +113,9 @@ const StandaloneCar = styled.div`
     }
 
     @media (min-width: ${SCREENS.sm}) {
-        top: -6em;
-        right: -6em;
-        height: 16em;
+        top: -4em;
+        left:0;
+        height: 20em;
     }
 
     @media (min-width: ${SCREENS.lg}) {
@@ -121,12 +125,11 @@ const StandaloneCar = styled.div`
     }
 
     @media (min-width: ${SCREENS.xl}) {
-        top: -9em;
+        top: -50px;
         right: -13em;
         height: 30em;
     }
 `;
-
 const ButtonsContainer = styled.div`
     ${tw`
         flex
@@ -135,18 +138,19 @@ const ButtonsContainer = styled.div`
 `
 
 function TopSection() {
-    const isSmallThanScreenMedium = window.innerWidth <= convertScreenToWidth(SCREENS.md);
+    const isSmallThanScreenMedium = window.innerWidth < convertScreenToWidth(SCREENS.md);
+    console.log(window.innerWidth);
     return (
         <TopSectionContainer>
             <LeftContainer>
-                <Slogan>Rent The Best Quality Car With Us</Slogan>
+                <Slogan>{isSmallThanScreenMedium ? 'Let Rent The Best Quality Car' : 'Rent The Best Quality Car With Us'}</Slogan>
                 <Description>
                     Always choose the best car from our global and local stores or order it remotely at 
                     the best price for you and get the best quality cars for as long as you like.
                 </Description>
                 <ButtonsContainer>
                     <Button
-                        text={isSmallThanScreenMedium ? 'Booking' : 'Book Your Ride'}
+                        text={isSmallThanScreenMedium ? 'Book Ride' : 'Book Your Ride'}
                     />
                     <Button theme='filled' 
                         text={isSmallThanScreenMedium ? 'Sell Car' : 'Sell Your Car'}

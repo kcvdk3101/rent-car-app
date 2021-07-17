@@ -35,7 +35,7 @@ const Container = styled.div`
 
 const Title = styled.h2`
     ${tw`
-        text-xl
+        text-2xl
         lg:text-4xl
         font-extrabold
         text-black
@@ -45,31 +45,32 @@ const Title = styled.h2`
 const StepsContainer = styled.div`
     ${tw`
         flex
+        flex-col
         justify-evenly
-        flex-wrap
-        mt-7
+        mt-3
+        md:mt-7
         lg:mt-16
     `}
 `
 
 const StepContainer = styled.div`
+    
     ${tw`
         flex
         flex-col
         items-center
         md:w-96
         m-3
-        transition-colors
         hover:text-red-500
     `}
 `
 
 const Step = styled.div`
+    width: 100px;
     ${tw`
         flex
         justify-center
         items-center
-        p-6
         rounded-lg
         shadow-md
     `}

@@ -54,7 +54,7 @@ const InfoContainer = styled.div`
 
 const Title = styled.h1`
     ${tw`
-        text-2xl
+        text-xl
         md:text-5xl
         text-black
         font-extrabold
@@ -85,11 +85,12 @@ function AboutUs() {
             <InfoContainer>
                 <Title>Fell The Best Experience With Our Rental Deals</Title>
                 <InfoText>
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde architecto vel perferendis 
-                     enim sapiente distinctio blanditiis dicta eos iste! Reprehenderit aliquam eaque repudiandae 
-                     exercitationem rerum dolores, facere sunt iure tempore! Rerum placeat corrupti possimus 
-                     obcaecati, vero iste tempora ab incidunt nisi, error perferendis amet magnam temporibus non. 
-                     Modi, adipisci, iusto quaerat reiciendis quas error, in ducimus repellendus totam molestias nam.
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, eligendi impedit consectetur 
+                     cenreihle accusantium nisi fugiat aspernatur nesciunt tenetur esse sit! Veniam, perferendis quia. 
+                     Eius ihskdk heoialveeoo voluptate veritatis corporis laudantium  opoeiru iied wquidem iusto.
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, eligendi impedit consectetur 
+                     cenreihle accusantium nisi fugiat aspernatur nesciunt tenetur esse sit! Veniam, perferendis quia. 
+                     Eius ihskdk heoialveeoo voluptate veritatis corporis laudantium  opoeiru iied wquidem iusto.   
                 </InfoText>
             </InfoContainer>
         </AboutUsContainer>
