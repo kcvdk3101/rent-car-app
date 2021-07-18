@@ -68,10 +68,15 @@ module.exports = {
 }
 ```
 
-## 5. CSS Property Structure
+## 5. React Carousel
+```bash
+  $ yarn add @brainhubeu/react-carousel
+```
+
+## CSS Property Structure
 > **Tutorial Link** : https://css-tricks.compoll-results-how-do-you-order-your-css-properties/
 
-## 6. Customize Markdown (Markdown to PDF file)
+## Customize Markdown (Markdown to PDF file)
 > **Tutorial Link** : https://www.youtube.com/watch?v=wBISkGjwVyo
 
 ## Other dependencies installed
