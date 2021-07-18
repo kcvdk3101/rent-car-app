@@ -13,7 +13,7 @@ const AboutUsContainer = styled.div`
         items-center
         2xl:justify-center
         w-full
-        mb-20
+        mb-72
         px-10
         bg-white
     `}
@@ -72,7 +72,6 @@ const InfoText = styled.p`
         text-justify
         text-sm
         md:text-xl
-        lg:text-2xl
         text-gray-500
         font-normal
     `}

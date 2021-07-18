@@ -5,7 +5,8 @@ import { SCREENS } from '../../../responsive'
 
 interface IButtonProps {
     theme?: 'filled' | 'outlined',
-    text: String;
+    text: string;
+    className?: string;
 }
 
 const BaseButton = styled.div`
@@ -60,11 +61,11 @@ const FilledButton = styled(BaseButton)`
 `
 
 function Button(props: IButtonProps) {
-    const {theme, text} = props;
+    const {theme, text, className} = props;
     if (theme === 'filled') {
-        return <FilledButton>{ text }</FilledButton>
+        return <FilledButton className={className}>{ text }</FilledButton>
     }
-    return <OutlinedButton>{ text }</OutlinedButton>
+    return <OutlinedButton className={className}>{ text }</OutlinedButton>
 }
 
 export default Button

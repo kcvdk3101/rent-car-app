@@ -54,7 +54,8 @@ const Container = styled.div`
 
     @media (min-width: ${SCREENS.xl}) {
         ${tw`
-            mb-32
+            mt-16
+            mb-44
         `}
     }
 `
