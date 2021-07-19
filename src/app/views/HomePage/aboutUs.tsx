@@ -14,6 +14,7 @@ const AboutUsContainer = styled.div`
         2xl:justify-center
         w-full
         mb-72
+        md:mb-60
         px-10
         bg-white
     `}

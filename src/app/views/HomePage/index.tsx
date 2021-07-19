@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import BookCard from '../../components/bookCard';
+import Footer from '../../components/footer';
 import Navbar from '../../components/navbar';
 import AboutUs from './aboutUs';
 import BookingSteps from './bookingSteps';
@@ -28,6 +29,7 @@ export function HomePage() {
             <BookingSteps/>
             <AboutUs/>
             <TopCars/>
+            <Footer/>
         </PageContainer>
     )
 }
