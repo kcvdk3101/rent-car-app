@@ -138,7 +138,6 @@ const ButtonsContainer = styled.div`
 `
 function TopSection() {
     const isSmallThanScreenMedium = window.innerWidth < convertScreenToWidth(SCREENS.md);
-    console.log(window.innerWidth);
     return (
         <TopSectionContainer>
             <LeftContainer>

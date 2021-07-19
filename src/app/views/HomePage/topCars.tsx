@@ -1,11 +1,74 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
-import { ICar } from '../../../typings/car'
 import Car from '../../components/car'
 import Carousel, { Dots, slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import { useMediaQuery } from 'react-responsive';
+import { SCREENS } from '../../../responsive';
 
+const testCars = [
+    {
+        name: "Audi S1 Car",
+        mileage: "10k",
+        thumbnailSrc:
+            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
+        dailyPrice: 70,
+        monthlyPrice: 1600,
+        gearType: "Auto",
+        gas: "Petrol",
+    },
+    {
+        name: "Audi S2 Car",
+        mileage: "12k",
+        thumbnailSrc:
+            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
+        dailyPrice: 80,
+        monthlyPrice: 1800,
+        gearType: "Auto",
+        gas: "Petrol",
+    },
+    {
+        name: "Audi S3 Car",
+        mileage: "14k",
+        thumbnailSrc:
+            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
+        dailyPrice: 100,
+        monthlyPrice: 2000,
+        gearType: "Auto",
+        gas: "Petrol",
+    },
+    {
+        name: "Audi S4 Car",
+        mileage: "16k",
+        thumbnailSrc:
+            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
+        dailyPrice: 120,
+        monthlyPrice: 2200,
+        gearType: "Auto",
+        gas: "Petrol",
+    },
+    {
+        name: "Audi S5 Car",
+        mileage: "18k",
+        thumbnailSrc:
+            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
+        dailyPrice: 140,
+        monthlyPrice: 2400,
+        gearType: "Auto",
+        gas: "Petrol",
+    },
+    {
+        name: "Audi S6 Car",
+        mileage: "20k",
+        thumbnailSrc:
+            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
+        dailyPrice: 160,
+        monthlyPrice: 2600,
+        gearType: "Auto",
+        gas: "Petrol",
+    },
+]
 
 const TopCarsContainer = styled.div`
     ${tw`
@@ -41,54 +104,16 @@ const CarsContainer = styled.div`
 `
 
 function TopCars() {
-    const testCar: ICar = {
-        name: "Audi S3 Car",
-        mileage: "10k",
-        thumbnailSrc:
-            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
-        dailyPrice: 70,
-        monthlyPrice: 1600,
-        gearType: "Auto",
-        gas: "Petrol",
-    };
-    const testCar2: ICar = {
-        name: "Audi S3 Car",
-        mileage: "10k",
-        thumbnailSrc:
-            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
-        dailyPrice: 70,
-        monthlyPrice: 1600,
-        gearType: "Auto",
-        gas: "Petrol",
-    };
-    const testCar3: ICar =  {
-        name: "Audi S3 Car",
-        mileage: "10k",
-        thumbnailSrc:
-            "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
-        dailyPrice: 70,
-        monthlyPrice: 1600,
-        gearType: "Auto",
-        gas: "Petrol",
-    };
-
-    const [currentIndex, setCurrentIndex] = useState(0)
-
+    const [currentIndex, setCurrentIndex] = useState('')
+    const isMobile = useMediaQuery({maxWidth: SCREENS.sm})
     return (
         <TopCarsContainer>
-            <Title>Explore Our Top Great Deals</Title>
+            <Title>Explore Our Top Deals</Title>
             <CarsContainer>
                 <Carousel 
                     value={currentIndex} 
                     onChange={setCurrentIndex} 
-                    slides={[
-                        <Car { ...testCar }/>,
-                        <Car { ...testCar2 }/>,
-                        <Car { ...testCar3 }/>,
-                        <Car { ...testCar }/>,
-                        <Car { ...testCar2 }/>,
-                        <Car { ...testCar3 }/>,
-                    ]}
+                    slides={testCars.map((car) => (<Car {...car} />))}
                     plugins={[
                         {
                             resolve: slidesToShowPlugin,
@@ -97,8 +122,30 @@ function TopCars() {
                             }
                         }
                     ]}
+                    breakpoints={{
+                        640: {
+                            plugins: [
+                                {
+                                    resolve: slidesToShowPlugin,
+                                    options: {
+                                        numberOfSlides: 1,
+                                    }
+                                }
+                            ]
+                        },
+                        900: {
+                            plugins: [
+                                {
+                                    resolve: slidesToShowPlugin,
+                                    options: {
+                                        numberOfSlides: 2,
+                                    }
+                                }
+                            ]
+                        }
+                    }}
                 />
-                <Dots value={currentIndex} onChange={setCurrentIndex} number={3} />
+                <Dots value={currentIndex} onChange={setCurrentIndex} number={isMobile ? testCars.length: testCars.length / 3} />
             </CarsContainer>
         </TopCarsContainer>
     )
