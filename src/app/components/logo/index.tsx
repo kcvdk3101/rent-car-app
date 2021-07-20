@@ -20,8 +20,7 @@ const LogoContainer = styled.div`
 const LogoText = styled.div`
     ${tw`
         m-1
-        text-xl
-        md:text-2xl
+        text-2xl
         font-bold
         text-black
     `}
@@ -31,7 +30,7 @@ const LogoText = styled.div`
 const Image = styled.div`
     ${tw`
         w-auto
-        h-6
+        h-14
         md:h-9
     `};
 

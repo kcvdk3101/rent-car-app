@@ -59,11 +59,11 @@ const Container = styled.div`
         `}
     }
 `
-const Title = styled.h2`
+const Title = styled.h1`
     ${tw`
-        text-2xl
-        md:text-3xl
-        lg:text-4xl
+        text-3xl
+        md:text-4xl
+        lg:text-5xl
         font-extrabold
         text-black
     `}

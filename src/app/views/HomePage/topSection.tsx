@@ -40,11 +40,10 @@ const Slogan = styled.h1`
         leading-snug
         md:leading-8
         lg:leading-relaxed
-        text-xl
-        font-semibold
-        md:text-3xl
+        text-3xl
         lg:text-4xl
         xl:text-6xl
+        font-semibold
         text-black
     `}
 
@@ -65,9 +64,9 @@ const Description = styled.p`
 const BlobContainer = styled.div`
     z-index: -1;
     position: absolute;
-    top:-4em;
-    left:-1.5em;
-    width: 20em;
+    top:-7em;
+    left:-3em;
+    width: 30em;
     transform: rotate(-30deg);
 
     img {
@@ -102,9 +101,10 @@ const BlobContainer = styled.div`
 `
 const StandaloneCar = styled.div`
     position: absolute;
-    right: -6.5em;
+    top:-1em;
+    left: -2em;
     width: auto;
-    height: 10em;
+    height: 15em;
 
     img {
         width: auto;
@@ -141,7 +141,7 @@ function TopSection() {
     return (
         <TopSectionContainer>
             <LeftContainer>
-                <Slogan>{isSmallThanScreenMedium ? 'Let Rent The Best Quality Car' : 'Rent The Best Quality Car With Us'}</Slogan>
+                <Slogan>{isSmallThanScreenMedium ? 'Rent The Best Car' : 'Rent The Best Quality Car With Us'}</Slogan>
                 <Description>
                     Always choose the best car from our global and local stores or order it remotely at 
                     the best price for you and get the best quality cars for as long as you like.

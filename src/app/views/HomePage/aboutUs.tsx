@@ -13,8 +13,10 @@ const AboutUsContainer = styled.div`
         items-center
         2xl:justify-center
         w-full
-        mb-72
-        md:mb-60
+        mb-28
+        md:mb-36
+        lg:mb-44
+        xl:mb-56
         px-10
         bg-white
     `}

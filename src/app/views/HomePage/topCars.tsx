@@ -78,16 +78,16 @@ const TopCarsContainer = styled.div`
         justify-center
         w-full
         max-w-screen-lg
-        px-4
-        md:px-0
-        mb-10
+        mb-28
+        md:mb-36
+        lg:mb-44
     `}
 `
-const Title = styled.h2`
+const Title = styled.h1`
     ${tw`
-        text-2xl
-        md:text-3xl
-        lg:text-4xl
+        text-3xl
+        md:text-4xl
+        lg:text-5xl
         font-extrabold
         text-black
     `}
