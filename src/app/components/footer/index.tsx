@@ -3,9 +3,9 @@ import React from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 import { SCREENS } from '../../../responsive'
-import Logo from '../logo'
 import FooterContacts from './footerContacts'
 import FooterItem from './footerItem'
+import FooterLogo from './footerLogo'
 
 const ourLinks = [
     {
@@ -83,9 +83,16 @@ const FooterContainer = styled.div`
         p-10
     `}
 
-    @media (max-width: ${SCREENS.md}) {
+    @media (min-width: ${SCREENS.xs}) {
         ${tw`
             flex-col
+        `}
+    }
+
+    @media (min-width: ${SCREENS.sm}) {
+        ${tw`
+            flex-row
+            justify-between
         `}
     }
 `
@@ -94,8 +101,17 @@ const AboutContainer = styled.div`
     ${tw`
         flex
         flex-col
+        h-full
         mb-5
     `}
+
+    @media (min-width: ${SCREENS.sm}) {
+        flex: 1;
+        ${tw`
+            items-start
+            mr-5
+        `}
+    }
 `
 
 const AboutText = styled.p`
@@ -108,9 +124,15 @@ const AboutText = styled.p`
         font-normal
     `}
 
-    @media (max-width: ${SCREENS.sm}) {
+    @media (min-width: ${SCREENS.xs}) {
        ${tw`
             display[none]
+       `}
+    }
+
+    @media (min-width: ${SCREENS.sm}) {
+       ${tw`
+            display[block]
        `}
     }
 `
@@ -122,14 +144,24 @@ const FooterItemsList = styled.div`
         justify-around
         items-center
         w-full
+        h-full
     `}
+
+    @media (min-width: ${SCREENS.sm}) {
+        flex: 2;
+        ${tw`
+            flex-row
+            flex-nowrap
+            items-start
+        `}
+    }
 `
 
 function Footer() {
     return (
         <FooterContainer>
             <AboutContainer>
-                <Logo color="white" bgColor="dark" />
+                <FooterLogo/>
                 <AboutText>
                     Lorem ipsum dolor sit amet consectetur adipisicing qpelit. Placeat voluptatibus quia minima est 
                     doloribus nostrum dolores quas quod, voluptatem sitasaff magnam natus. Tempore, aliquid nobisabt 
@@ -139,7 +171,7 @@ function Footer() {
             <FooterItemsList>
                 <FooterItem title="Our Links" list={ourLinks}/>
                 <FooterItem title="Other Links" list={otherLinks}/>
-                <FooterContacts title="Contact" list={contacts}/>
+                <FooterContacts title="Contact Us" list={contacts}/>
             </FooterItemsList>
         </FooterContainer>
     )

@@ -12,8 +12,12 @@ const HeadingContainer = styled.div`
         mb-5
     `}
 
-    @media (max-width: ${SCREENS.md}){
+    @media (min-width: ${SCREENS.xs}){
         display: none;
+    }
+
+    @media (min-width: ${SCREENS.md}){
+        display: block;
     }
 `
 
@@ -21,10 +25,15 @@ const HeadingTitle = styled.h4`
     letter-spacing: 2px;
     ${tw`
         mb-1
-        text-2xl
+        text-lg
+        lg:text-2xl
         text-white
         font-black
     `}
+
+    @media (min-width: ${SCREENS.md}) {
+        font-size: 22px;
+    }
 `
 
 const HeadingLongUnderLine = styled.div`

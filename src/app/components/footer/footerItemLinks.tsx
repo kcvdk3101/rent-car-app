@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
-import { SCREENS } from '../../../responsive'
 
 const FooterItemLinksList = styled.ul`
     ${tw`
@@ -11,7 +10,6 @@ const FooterItemLinksList = styled.ul`
         list-none
     `}
 `
-
 const FooterItemListItem = styled.h1`
     ${tw`
         mb-2

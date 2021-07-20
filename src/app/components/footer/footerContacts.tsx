@@ -8,8 +8,7 @@ const FooterContactContainer = styled.div`
     ${tw`
         flex
         flex-col
-        justify-center
-        items-start
+        justify-start
     `}
 `
 

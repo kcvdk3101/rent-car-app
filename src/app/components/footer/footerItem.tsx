@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
-import { SCREENS } from '../../../responsive'
 import FooterItemHeading from './footerItemHeading'
 import FooterItemLinks from './footerItemLinks'
 
@@ -11,6 +10,7 @@ const FooterItemContainer = styled.div`
         flex-col
         justify-center
         items-start
+        mr-5
     `}
 `
 
