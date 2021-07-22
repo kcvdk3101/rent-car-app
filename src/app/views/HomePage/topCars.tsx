@@ -11,7 +11,7 @@ const testCars = [
     {
         name: "Audi S1 Car",
         mileage: "10k",
-        thumbnailSrc:
+        thumbnailUrl:
             "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
         dailyPrice: 70,
         monthlyPrice: 1600,
@@ -21,7 +21,7 @@ const testCars = [
     {
         name: "Audi S2 Car",
         mileage: "12k",
-        thumbnailSrc:
+        thumbnailUrl:
             "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
         dailyPrice: 80,
         monthlyPrice: 1800,
@@ -31,7 +31,7 @@ const testCars = [
     {
         name: "Audi S3 Car",
         mileage: "14k",
-        thumbnailSrc:
+        thumbnailUrl:
             "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
         dailyPrice: 100,
         monthlyPrice: 2000,
@@ -41,7 +41,7 @@ const testCars = [
     {
         name: "Audi S4 Car",
         mileage: "16k",
-        thumbnailSrc:
+        thumbnailUrl:
             "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
         dailyPrice: 120,
         monthlyPrice: 2200,
@@ -51,7 +51,7 @@ const testCars = [
     {
         name: "Audi S5 Car",
         mileage: "18k",
-        thumbnailSrc:
+        thumbnailUrl:
             "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
         dailyPrice: 140,
         monthlyPrice: 2400,
@@ -61,7 +61,7 @@ const testCars = [
     {
         name: "Audi S6 Car",
         mileage: "20k",
-        thumbnailSrc:
+        thumbnailUrl:
             "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
         dailyPrice: 160,
         monthlyPrice: 2600,
@@ -80,7 +80,6 @@ const TopCarsContainer = styled.div`
         max-w-screen-lg
         mb-28
         md:mb-36
-        lg:mb-44
     `}
 `
 const Title = styled.h1`
