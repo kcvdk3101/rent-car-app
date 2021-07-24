@@ -1,4 +1,4 @@
-import { Action, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { IHomePageState } from './type';
 
 const initialState: IHomePageState = {
@@ -14,3 +14,6 @@ export const homePageSlice = createSlice({
         }
     }
 })
+
+export const { setTopCars } = homePageSlice.actions
+export default homePageSlice.reducer
