@@ -11,6 +11,7 @@ interface IButtonProps {
 
 const BaseButton = styled.div`
     ${tw`
+        cursor-pointer
         border-2
         border-solid
         border-transparent
